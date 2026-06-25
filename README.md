@@ -33,16 +33,16 @@ Synthetic data was used to demonstrate experimentation methodology while avoidin
 
 This project walks through the complete lifecycle of A/B test analysis, organized into 7 distinct sections in a Jupyter Notebook:
 
-1. **0. Setup:** Environmental configuration, importing dependencies (`scipy`, `statsmodels`, `seaborn`, `pandas`), and loading datasets.
-2. **1. Experiment Design:** Pre-test power analysis to calculate the required sample size and post-hoc power calculations.
-3. **2. EDA & Sanity Checks:** 
+**0. Setup:** Environmental configuration, importing dependencies (`scipy`, `statsmodels`, `seaborn`, `pandas`), and loading datasets.   
+**1. Experiment Design:** Pre-test power analysis to calculate the required sample size and post-hoc power calculations.   
+**2. EDA & Sanity Checks:** 
    * **Sample Ratio Mismatch (SRM)** testing using Chi-Square Goodness-of-Fit.
    * Data quality verification.
    * Daily traffic trends and daily conversion rates checks to rule out **novelty effects**.
-4. **3. Core Analysis:** Conversion rate metrics, **Two-Proportion Z-test**, Confidence Intervals, **Cohen's h** effect size calculation, and a **10,000-resample vectorized bootstrap simulation** to visualize lift probability.
-5. **4. Guardrail Metrics:** Analyzing the impact on **Return Rates** (impulse buying side-effects) and overall **Session Durations** (t-test).
-6. **5. Segmentation:** Drilling down performance by **Device Type** (Desktop vs. Mobile) and **User Type** (New vs. Returning) to uncover divergent behaviors.
-7. **6. Results Summary:** A centralized summary table aggregating all computed statistics.
+  
+**3. Core Analysis:** Conversion rate metrics, **Two-Proportion Z-test**, Confidence Intervals, **Cohen's h** effect size calculation, and a **10,000-resample vectorized bootstrap simulation** to visualize lift probability.   
+**4. Guardrail Metrics:** Analyzing the impact on **Return Rates** (impulse buying side-effects) and overall **Session Durations** (t-test).  
+**5. Segmentation:** Drilling down performance by **Device Type** (Desktop vs. Mobile) and **User Type** (New vs. Returning) to uncover divergent behaviors. **6. Results Summary:** A centralized summary table aggregating all computed statistics.   
 
 
 ---
@@ -69,23 +69,12 @@ All statistics are generated dynamically from the experiment dataset:
 
 ---
 
-##  Repository Structure
-
-```filepath
-├── README.md                 # Project Overview
-├── generate_data.py          # Script generating synthetic user data
-├── ab_test_data.csv          # Generated raw dataset (10,000 sessions)
-└── ab_testing_analysis.ipynb # Fully compiled analysis Jupyter Notebook
-```
-
----
-
 ##  Setup & Execution
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
+git clone https://github.com/umang248/ab-testing-ecommerce-experiment.git
+cd ab-testing-ecommerce-experiment
 ```
 
 ### 2. Install Dependencies
@@ -94,7 +83,7 @@ Ensure you have Python 3.10+ installed. Install required packages:
 pip install pandas numpy matplotlib seaborn scipy statsmodels notebook
 ```
 
-### 3. Generate the Data and Notebook
+### 3. Generate the Data
 If you want to regenerate the dataset from scratch, run the scripts:
 ```bash
 python generate_data.py
